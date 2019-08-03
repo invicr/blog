@@ -81,3 +81,23 @@ deploy:
   type: git
   repo: https://github.com/invicr/invicr.github.io.git
   branch: master
+
+nofollow:
+    enable: true
+
+# rss feed auto generator
+feed:
+  # feed type (atom / rss2)
+  type: rss2
+  # feed path (Default: atom.xml / rss2.xml)
+  path: rss2.xml
+  # 최신 포스트의 갯수 설정. (0 또는 false 입력시 전체 포스트)
+  limit: 20
+
+sitemap:
+  path: sitemap.xml
+
+robotstxt:
+  User-agent: "*"
+  Allow: /
+  Sitemap: https://invicr.github.io/sitemap.xml
