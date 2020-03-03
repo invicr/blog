@@ -9,7 +9,7 @@ tags:
   - 최소값
   - 최대값
 date: 2020-02-16 23:22:25
-thumbnail: /images/java-logo.jpg
+thumbnail:
 ---
 배열의 첫 번째 원소를 min과 max로 지정한다.
 배열의 크기 만큼 for loop를 돌면서 초기 min, max 값과 비교하면서
