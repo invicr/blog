@@ -21,7 +21,7 @@ HashMap의 특징은 아래와 같다.
 HashMap은 key를 hash 함수에 넣어 나온 value를 bucket의 특정 인덱스에 저장한다. H(k) = k mod M 의 계산식을 통해서 버킷의 크기보다 작은 인덱스에 저장을 하도록 한다. (1/M확률로 충돌이 발생하게 된다.)
 
 ![](https://codenuclear.com/wp-content/uploads/2017/11/bucket_entries.jpg)
-이미지 출처 : https://codenuclear.com/difference-between-hashmap-hashtable/
+<center>이미지 출처 : https://codenuclear.com/difference-between-hashmap-hashtable/</center>
 
 ### Time complexity
 key는 고유하며 해시 함수의 결과로 나온 해시에 매칭되는 value를 찾으면 되기 때문에 시간 복잡도는 O(1)이다.
