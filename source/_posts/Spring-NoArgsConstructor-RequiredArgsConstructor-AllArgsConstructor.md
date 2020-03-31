@@ -24,8 +24,8 @@ public class Student {
 }
 ```
 
-|구분|설명|예|
-|------|---|---|
-|NoArgsConstructor|파라미터가 없는 기본 생성자를 생성|```Java Student std = new Student();```|
-|RequiredArgsConstructor|<code>final</code>이나 <code>@NonNull</code>인 필드 값만 파라미터로 받는 생성자|```Java Student std = new Student(1L);```|
-|AllArgsConstructor|모든 필드 값을 파라미터로 받는 생성자 생성|```Java Student std = new Student(1L, "홍길동", 20);```|
+|구분|설명|
+|------|---|
+|@NoArgsConstructor|파라미터가 없는 기본 생성자를 생성<br>```Student std = new Student();```|
+|@RequiredArgsConstructor|<code>final</code>이나 <code>@NonNull</code>인 필드 값만 파라미터로 받는 생성자<br>```Student std = new Student(1L);```|
+|@AllArgsConstructor|모든 필드 값을 파라미터로 받는 생성자 생성<br>```Student std = new Student(1L, "홍길동", 20);```|
