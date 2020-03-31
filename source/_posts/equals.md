@@ -1,20 +1,22 @@
 ---
-title: 'equals, =='
+title: '== vs equals()'
 categories:
   - Programming
   - Java
 tags:
   - equals()
   - ==
-  - equals(), ==
+  - == vs equals()
 date: 2020-03-06 21:13:40
 thumbnail:
 ---
-Java에서 <code>equals()</code>와 <code>==</code>는 객체 혹은 내용을 비교할 때 사용하곤 한다. 이 둘은 어떤 차이점이 있을까?
+Java에서 <code>equals()</code>와 <code>==</code>는 객체 혹은 내용을 비교할 때 사용하곤 한다.
+이 둘은 어떤 차이점이 있을까?
 
-### ==
+### == : 동일성 비교
 + Primitive Type(int, float, double, long 등)일 경우에는 값이 같은 지 확인
 + 그 외에 객체나 Reference Type일 경우에는 주소가 같은지 확인
+
 ```java
 //리터럴 생성
 String str1 = "hi";
@@ -35,10 +37,11 @@ new로 생성할 경우 생성 할 때마다 새로운 인스턴스를 생성하
 + <code>str1 == str3</code> : 리터럴과 new로 생성되어 서로 다른 주소에 위치하기 때문에 <strong>false</strong>
 결론적으로 <code>==</code> 두 객체가 같은 주소를 가르킬 때 true를 반환한다.
 
-### equals()
+### equals() : 동등성 비교
 + Primitive Type(int, float, double, long 등)일 경우에는 값이 같은 지 확인
 + 그 외 객체나 Reference Type일 경우에는 주소가 같은지 확인
 + <code>==</code>과 유사하지만 다른 점은 완전히 같은 객체(같은 주소)를 가리키지 않아도 <code>equals()</code> 메서드 오버라이딩을 통해서 true로 만들 수 있다.
+
 ```java
 String str1 = "hi";
 String str2 = "hi";
@@ -87,7 +90,7 @@ System.out.println(s1.equals(s2));  //true
 System.out.println(s1.hashCode());  //80
 System.out.println(s2.hashCode());  //80
 ```
-<code>hashcode()</code> 왜 오버라이딩하는지 궁금해 할 것이다. 우리도 모르는 사이에 hash값을 쓰는 곳이 많다. 예를 들면 <code>HashSet</code>이나 <code>hashmap</code> 같은 컬렉션 들이다. <code>equals()</code>만 오버라이딩하고 <code>hashcode()</code>는 하지 않았을 경우엔 같은 객체라 할지라도 <code>hashcode()</code> 값이 다르게 나올 수 있는데, 이때는 다른 객체로 인식하기 때문이다.
+<code>hashcode()</code> 왜 오버라이딩하는지 궁금해 할 것이다. 우리도 모르는 사이에 hash값을 쓰는 곳이 많다. 예를 들면 <code>hashSet</code>이나 <code>hashmap</code> 같은 컬렉션 들이다. <code>equals()</code>만 오버라이딩하고 <code>hashcode()</code>는 하지 않았을 경우엔 같은 객체라 할지라도 <code>hashcode()</code> 값이 다르게 나올 수 있는데, 이때는 다른 객체로 인식하기 때문이다.
 ```java
 Set<Student> stu = new HashSet<>();
 stu.add(s1);
@@ -102,8 +105,8 @@ System.out.println(stu.size());
 ### 정리
 + <code>==</code>는 객체 간의 <strong>동일성</strong>을 판단하기 위해 사용한다. <strong>동일성</strong>은 두 개의 객체가 완전히 같을 경우를 의미 한다.
 + <code>equals()</code>는 객체 간의 <strong>동등성</strong>을 판단하기 위해 사용한다. <strong>동등성</strong>은 두 개의 객체가 같은 내용을 가질 경우를 의미 한다.
-+ <code>==</code> 연산자는 주소 값의 비교, <code>equals()</code>는 내용의 비교 한다.
-+ <code>equals()</code>를 재정의 하여 사용할 경우 반드시 <code>hashcode()</code>도 재정의 하여야 한다.
++ <code>==</code> 연산자는 주소 값의 비교, <code>equals()</code>는 내용을 비교 한다.
++ <code>equals()</code>를 오버라이딩 할 경우 반드시 <code>hashcode()</code>도 오버라이딩 하여야 한다.
 + <code>equals()</code>로 true가 나온 경우 <code>hashcode()</code>의 값이 동일 해야 한다. 그러나 <code>hashcode()</code>가 동일하다고 해서 반드시 같은 객체는 아니다.
 
 ### 참고 사이트
