@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.2.0"
+    "version": "5.0.0"
   },
   "dependencies": {
-    "hexo": "^4.2.0",
+    "hexo": "^5.0.0",
     "hexo-auto-canonical": "^0.1.1",
     "hexo-autonofollow": "^1.0.1",
     "hexo-deployer-git": "^2.1.0",
@@ -23,6 +23,7 @@
     "hexo-server": "^0.3.3",
     "jdom": "^3.1.11",
     "jquery": "^3.5.0",
-    "jsdom": "^15.2.1"
+    "jsdom": "^15.2.1",
+    "update": "^0.7.4"
   }
 }
